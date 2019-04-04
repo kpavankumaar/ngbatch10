@@ -9,6 +9,46 @@
 		function run(){
 			console.log(10);
 		}
+		var mic = {
+			color:'black',
+			brand: 'iball',
+			listen: function(range){
+				console.log('can listen upto '+ range);
+			}
+		}
+		mic.listen('20db');
+		function sum(num1,num2){
+			if(typeof(num1) === 'number'){
+					console.log(num1 + num2);
+			}else if(typeof(num1) === 'function'){
+				var obj = {
+					value1 : num1
+				}
+				num1(obj);
+			}else{
+
+			}
+			
+		}
+		sum(10,20);
+		sum(function(obj){
+			console.log(obj.value1);
+		},function(){});
+
+		function test(){
+			return 10;
+			console.log('checkout');
+		}
+		var num_1 = test();
+		function carpenterRole(raw1,raw2,inform){
+			console.log(typeof(inform));
+				inform('3/4th work is completed');
+		}
+		carpenterRole('wood','tools',function(status){
+				console.log(status)
+		})
+
+
 	</script>
 </body>
 </html>
