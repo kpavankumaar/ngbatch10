@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h3><a href="#">DOM session</a></h3>
+	<p></p>
+	<p><a href="#">test</a></p>
+	<button>clickme</button>
+<script type="text/javascript">
+	var a = 10 ;
+	var para = document.getElementsByTagName('p');
+	var btn = document.getElementsByTagName('button')[0];
+	console.log(para);
+	para[0].innerText = a;
+	btn.onclick = function(){
+		console.log("you clicked on button element");
+	}
+</script>
+</body>
+</html>
