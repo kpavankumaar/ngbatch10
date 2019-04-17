@@ -7,15 +7,21 @@
 	<h3><a href="#">DOM session</a></h3>
 	<p></p>
 	<p><a href="#">test</a></p>
-	<button>clickme</button>
+	
+	<button>submit</button>
+	<button id="testclick">clickme</button>
+
 <script type="text/javascript">
 	var a = 10 ;
-	var para = document.getElementsByTagName('p');
+	var clickBtn = document.getElementById('testclick');
 	var btn = document.getElementsByTagName('button')[0];
-	console.log(para);
-	para[0].innerText = a;
-	btn.onclick = function(){
-		console.log("you clicked on button element");
+	// btn.onclick = function(){
+	// 	console.log("you clicked on button element");
+	// 	var para = document.getElementsByTagName('p');
+	// 	para[0].innerText = a;
+	// }
+	clickBtn.onclick = function(){
+		console.log('test')
 	}
 </script>
 </body>
