@@ -29,30 +29,65 @@
 <body>
 	<h3>manager app</h3>
 	<div class="container">
-		<h4>Customer Name</h4>
-		<div>
-			<ul>
-				<li>Product</li>
-				<li>ItemCost</li>
-			</ul>
-			<ul>
-				<li>ProductName1</li>
-				<li>200</li>
-			</ul>
-			<ul>
-				<li>ProductName2</li>
-				<li>1000</li>
-			</ul>
-			<ul>
-				<li>total Cost</li>
-				<li>1200</li>
-			</ul>
+		<div>	
+			<h4>Customer Name</h4>
+			<div>
+				<ul>
+					<li>Product</li>
+					<li>ItemCost</li>
+				</ul>
+				<ul>
+					<li>ProductName1</li>
+					<li>200</li>
+				</ul>
+				<ul>
+					<li>ProductName2</li>
+					<li>1000</li>
+				</ul>
+				<ul>
+					<li>total Cost</li>
+					<li>1200</li>
+				</ul>
+			</div>
 		</div>
 	</div>
 	<script type="text/javascript" src="./data.js"></script>
 	<script type="text/javascript">
-
+		// create elements = divGP,h4,divP,2ulC -> 2 li  
+		// adding content into created elements -> innerHTML, innerText
+		// placing the elements in an order
 		console.log(data);
+		var container = document.getElementsByClassName('container')[0];
+		var divGp = document.createElement('div');
+		var customerName = document.createElement('h4');
+		var divP = document.createElement('div');
+		var ulHeaders = document.createElement('ul');
+		var ulFooters = document.createElement('ul');
+		var liProdNameTitle = document.createElement('li');
+		var liItemCostTitle = document.createElement('li');
+		var liTotalCost = document.createElement('li');
+		var liSumOfItemCost = document.createElement('li');
+		// headings
+		liProdNameTitle.innerText = 'ProductName';
+		liItemCostTitle.innerText = 'ItemCost';
+		ulHeaders.appendChild(liProdNameTitle);
+		ulHeaders.appendChild(liItemCostTitle);
+		// footers
+		liTotalCost.innerText = 'TotalCost';
+		liSumOfItemCost.innerText = '';
+		ulFooters.appendChild(liTotalCost);
+		ulFooters.appendChild(liSumOfItemCost);
+		// div parent 
+		divP.appendChild(ulHeaders);
+		divP.appendChild(ulFooters);
+		// customer first name and last name 
+		customerName.innerText = 'krishna';
+
+		divGp.appendChild(customerName);
+		divGp.appendChild(divP);
+
+		container.appendChild(divGp);
+
 		for(var i = 0 ; i < data.length; i = i+ 1 ){
 			var name = data[i].firstName;
 			console.log(name);
