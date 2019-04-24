@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	function multiply(a){
+		var c = 6;
+		return function (b){
+			console.log(a * b * c);
+		}
+	}
+
+	var multipleOf10 = multiply(10);
+	multipleOf10(2);
+
+</script>
+</body>
+</html>

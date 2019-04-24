@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		var a = 10 ;
+		var b = a ;
+		b = 20;
+		console.log(a)
+
+		var obj ={
+			num: 15
+		}
+		var obj1 = obj;
+		obj1.num = 25;
+		console.log(obj.num);
+		var obj2 = Object.create(obj);
+		obj2.num = 18;
+		console.log(obj.num);
+	</script>
+</body>
+</html>

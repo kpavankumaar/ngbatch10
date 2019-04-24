@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		console.log(this);
+		function Address(hno,street,city,state,pincode){
+			this.houseNo = hno;
+			this.street = street;
+			this.city = city;
+			this.state = state;
+			this.pincode = pincode;
+		};
+		Address.prototype.addressDetails = function(){
+			console.log(this.city , this.state);
+		}
+		function UserDetails(firstName,lastName,age,gender,hno,street,city,state,pincode){
+			this.firstName = firstName;
+			this.lastName = lastName;
+			this.age = age;
+			this.gender = gender;
+			// this.userDetailsInformation = function(){
+			// 	console.log(this.firstName, this.lastName, this.age);
+			// }
+			// this.address = new Address(hno,street,city,state,pincode);
+			var arr = [hno,street,city,state,pincode];
+			Address.apply(this,arr);
+		};
+		UserDetails.prototype = Object.create(Address.prototype);
+		UserDetails.prototype.constructor = UserDetails;
+		UserDetails.prototype.userDetailsInformation = function(){
+				console.log(this.firstName, this.lastName, this.age);
+		}
+		// UserDetails();
+	 	var userInfo = new UserDetails('krishna','radhe',25,'male','1-1-3-5','sap street','hyd','telangana','500038');
+	 	var userInfo1 = new UserDetails('balaram','krishna',35,'male','1-1-3-5','sap street','hyd','telangana','500038');
+		var obj = {
+			num:10,
+			run:function(){
+				console.log(this);
+				function test(){
+					console.log(this);
+				}
+				test();
+			}
+		}
+		obj.run();
+		function multiply(a,b){
+			console.log(a * b);
+		}
+
+		var multipleOf3 = multiply.bind(this);
+
+
+	</script>
+</body>
+</html>
