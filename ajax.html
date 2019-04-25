@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>	</title>
+</head>
+<body>
+<script type="text/javascript">
+	var xhr = new XMLHttpRequest();
+	console.log(xhr.readyState);
+	var url = 'https://jsonplaceholder.typicode.com/posts';
+	xhr.open('POST',url,true);
+	console.log(xhr.readyState);
+	xhr.onreadystatechange = function(){
+
+		console.log(xhr.readyState);
+		if (xhr.readyState == 4 && xhr.status == 200) {
+			console.log(xhr.response);
+		}
+		console.log(xhr.status);
+	}
+	var obj = {"name":"krishna"};
+	var obj1 = JSON.stringify(obj)
+	xhr.setRequestHeader('content-type','application/json');
+	xhr.send(obj1);
+	console.log(xhr.readyState);
+
+</script>
+</body>
+</html>

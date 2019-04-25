@@ -5,15 +5,24 @@
 </head>
 <body>
 <script type="text/javascript">
-	function multiply(a){
-		var c = 6;
-		return function (b){
-			console.log(a * b * c);
+
+	(function(win){
+		console.log(10);
+		function multiply(a){
+			var c = 6;
+			
+			return function (b){
+				console.log(a * b * c);
+			}
 		}
+		win.multiplyFn = multiply;
+	})(window)
+	var multipleOf10 = multiplyFn(10);
+	multipleOf10(2);
+	multiplyFn = {
+		num:10
 	}
 
-	var multipleOf10 = multiply(10);
-	multipleOf10(2);
 
 </script>
 </body>
