@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	var xhr = new XMLHttpRequest();
+	
+	var promise = new Promise(function(resolve,reject){
+		console.log('promise');
+		var url = 'https://jsonplaceholder.typicode.com/posts';
+		xhr.open('GET',url,true);
+		
+		xhr.onreadystatechange = function(){
+			if (xhr.readyState == 4 && xhr.status == 200) {
+				// console.log(xhr.response);
+				resolve(xhr.response);
+			}else if(xhr.readyState == 4 && xhr.status !== 200){
+				reject(xhr.status);
+			}
+				
+			
+		}
+		xhr.send(null);
+		
+	})
+
+	
+	promise.then(function(resp){
+		console.log(resp);
+		return 10;
+	}).then(function(resp){
+		console.log(resp)
+		return 20;
+	}).then(function(resp){
+		console.log(resp)
+
+	})
+
+	// function carpenter(callback){
+	// 	callback('wood','l-shape',patternVendor);
+	// 	function patternVendor(){
+	// 		return 'designs pattern 1 ';
+	// 	}
+	// }
+	// carpenter(function(typeofmat,shape,designs){
+	// 	var pattern = designs();
+	// 	if (typeofmat && shape && pattern) {
+			
+	// 		console.log('prepare sofa with ',pattern );
+	// 		// designs();
+	// 	}
+
+		
+	// })
+</script>
+</body>
+</html>

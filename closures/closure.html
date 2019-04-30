@@ -5,17 +5,24 @@
 </head>
 <body>
 <script type="text/javascript">
-
+var obj ={}
 	(function(win){
 		console.log(10);
-		function multiply(a){
+		var calculater = {}
+		calculater.multiply = function (a){
 			var c = 6;
 			
 			return function (b){
 				console.log(a * b * c);
 			}
 		}
-		win.multiplyFn = multiply;
+		calculater.add = function(){ 
+
+		}
+		calculater.sub = function(){
+
+		}
+		win.multiplyFn = calculater.multiply;
 	})(window)
 	var multipleOf10 = multiplyFn(10);
 	multipleOf10(2);

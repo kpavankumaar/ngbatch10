@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		var arr = [1,2,3,4,5]
+		var arr1 = arr.map(function(item){
+			if (item > 2 ) {
+				return item*2;	
+			}
+			
+		});
+		var arr2 = arr.filter(function(item){
+			if(item> 2){
+				return item	
+			}
+			
+		})
+		arr.reduce(function(cum,item,index,arr){
+			console.log('cum', cum);
+			console.log('item', item);
+			console.log('index',index)
+			console.log('array', arr);
+		})
+	</script>
+</body>
+</html>
