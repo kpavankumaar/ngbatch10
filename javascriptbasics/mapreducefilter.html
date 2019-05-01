@@ -18,12 +18,22 @@
 			}
 			
 		})
-		arr.reduce(function(cum,item,index,arr){
+
+		var reducedVal = arr.reduce(function(cum,item,index,arr){
 			console.log('cum', cum);
 			console.log('item', item);
 			console.log('index',index)
 			console.log('array', arr);
+			return cum = cum + item;
 		})
+		var arr3 = [[1,2],[3,4],[5,6]] // [1,2,3,4,5,6]
+		for(var i = 0 ; i < arr3.length ; i = i+1 ){
+			arr3[i].concat(arr3[i+1])
+		}
+		var arr4 = arr3.reduce(function(cum,item,index,arr){
+			return cum.concat(item)
+		})
+
 	</script>
 </body>
 </html>
