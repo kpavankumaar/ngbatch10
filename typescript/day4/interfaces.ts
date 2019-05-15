@@ -12,7 +12,7 @@ obj = {
     age: 25,
     details:function(productDetails){
         typeof(this.age);
-        return 'details';
+        return productDetails;
     }
 }
 obj.details('phone')
