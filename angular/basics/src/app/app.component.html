@@ -1,3 +1,8 @@
-<h3 [style.backgroundColor] = 'fontColor'>Building Angular {{title}} {{ 4 == 1 + 3}}</h3>
+<h3 [style.backgroundColor] = "fontColor">Building Angular {{title}} {{ 4 == 1 + 3}}</h3>
 
-<input type="text" >
+<input type="text" (input)="runTheCode($event.target.value)" >
+{{title}}
+
+<input type="text" (keyup.enter)="runTheCode($event.target.value)" >
+
+<input type="text" #username (input)="runTheCode(username.value)" >

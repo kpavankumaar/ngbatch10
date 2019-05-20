@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,9 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  @ViewChild('username') userDetails:ElementRef;
   title = 'First Basic Project';
   fontColor = 'lightgreen';
   constructor(){
     console.log("app component contructor");
+  }
+  runTheCode(val){
+    console.log(val);
+    this.title = val;
+    this.userDetails.nativeElement.style.backgroundColor = 'lightgrey';
   }
 }
