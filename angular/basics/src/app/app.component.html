@@ -6,3 +6,11 @@
 <input type="text" (keyup.enter)="runTheCode($event.target.value)" >
 
 <input type="text" #username (input)="runTheCode(username.value)" >
+
+<input type="text" [(ngModel)]="emailDetails" placeholder="username" >
+{{emailDetails}}
+<input type="text" [ngModel]="emailDetails" (ngModelChange) = "test()" placeholder="username" >
+<p *ngIf = 'false' [ngClass] = "{'is_invalid':true}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia corporis ea, animi nostrum expedita nisi, excepturi quae maiores quo itaque ipsam magni architecto dolorum omnis blanditiis maxime soluta natus velit?</p>
+<select (click)="chooseState($event.target.value)" >
+    <option *ngFor = "let state of states">{{state}}</option>;
+</select>
