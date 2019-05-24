@@ -8,12 +8,19 @@
             type="email" 
             name="email"
             class="form-control" 
-            id="exampleInputEmail1" 
+            id="exampleInputEmail1"
             ngModel
             required
-            [ngClass] = "{'is-invalid':loginForm.controls.email?.invalid}"
+            minlength="6"
+            [ngClass] = "{'is-invalid':loginForm.controls.email?.invalid && 
+                                       loginForm.controls.email?.touched  
+                          }"
             placeholder="Enter email">
-          <label for=""> email invalid status</label>
+          
+          <div class="invalid-feedback">
+            <label *ngIf = "loginForm.controls.email?.errors?.required"> Enter your email address </label>
+            <label *ngIf = "loginForm.controls.email?.errors?.minlength"> length of  email address is atleast 6 characters </label>
+          </div>
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">Password</label>
@@ -22,14 +29,28 @@
             name = "password"
             class="form-control" 
             id="exampleInputPassword1"
+            required
+            minlength="3"
+            #pwdVar = "ngModel"
             ngModel 
+            [ngClass] = "{'is-invalid':pwdVar.invalid && pwdVar.touched}"
             placeholder="Password">
+            <div class="invalid-feedback">
+              <label *ngIf = "pwdVar.errors?.required"> Enter your password </label>
+              <label *ngIf = "pwdVar.errors?.minlength"> length of  password is atleast 3 characters </label>
+            </div>
         </div>
+        
         <div class="form-group form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <input 
+            type="checkbox" 
+            class="form-check-input" 
+            id="exampleCheck1"
+            >
           <label class="form-check-label" for="exampleCheck1">Check me out</label>
         </div>
-        <button type="submit" class="btn btn-primary" >Submit</button>
+        {{loginForm.invalid}}
+        <button type="submit" class="btn btn-primary" [disabled] ="loginForm.invalid">Submit</button>
       </form>
     </div>
   </div>
