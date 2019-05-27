@@ -14,4 +14,5 @@
 <select (click)="chooseState($event.target.value)" >
     <option *ngFor = "let state of states">{{state}}</option>;
 </select> -->
-<app-templatedrivenform></app-templatedrivenform>
+<!-- <app-templatedrivenform></app-templatedrivenform> -->
+<app-reactiveform [emailDetails]= 'emailDetails'></app-reactiveform>

@@ -6,6 +6,7 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   emailDetails = 'krishna@gmail.com';
   @ViewChild('username') userDetails:ElementRef;
   title = 'First Basic Project';
@@ -24,5 +25,15 @@ export class AppComponent {
   states = ['telangana', 'Madhyapradesh','Tamil nadu'];
   chooseState(val){
     this.title = val;
+  }
+
+  ngOnChanges(){
+    console.log('ngOnChanges in app component ');
+  }
+  ngOnInit() {
+    console.log('ngOnInit in app component');
+  }
+  ngDoCheck(){
+    console.log('ngDocheck in app component');
   }
 }
