@@ -28,12 +28,12 @@ export class AppComponent {
   }
 
   ngOnChanges(){
-    console.log('ngOnChanges in app component ');
+    // console.log('ngOnChanges in app component ');
   }
   ngOnInit() {
-    console.log('ngOnInit in app component');
+    // console.log('ngOnInit in app component');
   }
   ngDoCheck(){
-    console.log('ngDocheck in app component');
+    // console.log('ngDocheck in app component');
   }
 }

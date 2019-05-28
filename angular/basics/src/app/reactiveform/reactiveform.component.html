@@ -30,6 +30,57 @@
         class="form-control" 
         placeholder="Rating">
     </div>
+    <!-- notification throug email or phone -->
+    <div class="form-check">
+      <input 
+        formControlName = "notification"
+        class="form-check-input" 
+        type="radio" 
+        id="exampleRadios1" 
+        (click) = "verification()"
+        value="email" checked>
+      <label class="form-check-label" for="exampleRadios1">
+        Email
+      </label>
+    </div>
+    <div class="form-check">
+      <input 
+          formControlName = "notification"
+          class="form-check-input" 
+          type="radio" 
+          id="exampleRadios2" 
+          (click) = "verification()"
+          value="phone">
+      <label class="form-check-label" for="exampleRadios2">
+        Phone
+      </label>
+    </div>
+    <!--end of  notification -->
+    <!-- phone number  -->
+    <div class="form-group">
+      <label for="exampleInputPassword1">Rating</label>
+      <input type="number" 
+        formControlName = "phone"
+        min="1"
+        max="5"
+        [ngClass] = "{'is-invalid': customerInfo.controls.phone.invalid &&
+                                    customerInfo.controls.phone.touched}"
+        class="form-control" 
+        placeholder="Phone number">
+    </div>
+    <!-- end of phone number -->
+    <!-- Email -->
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email</label>
+      <input 
+          type="text" 
+          formControlName = "email"
+          [ngClass] = "{'is-invalid': customerInfo.controls.email.invalid &&
+                                      customerInfo.controls.email.touched}"
+          class="form-control" 
+          placeholder="Enter email">
+    </div>
+    <!-- end of email  -->
     <div class="form-group form-check">
       <input type="checkbox" class="form-check-input" id="exampleCheck1">
       <label class="form-check-label" for="exampleCheck1">Check me out</label>
