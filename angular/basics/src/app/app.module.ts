@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { TemplatedrivenformComponent } from './templatedrivenform/templatedrivenform.component';
 import { ReactiveformComponent } from './reactiveform/reactiveform.component';
 import { SamplecomponentComponent } from './reactiveform/samplecomponent/samplecomponent.component';
+import { CustomersModule } from './customers/customers.module';
+import { CustomersComponent } from './customers/customers.component';
 
 const route:Routes = [
   {path:'templatedrivenform', component:TemplatedrivenformComponent},
@@ -23,12 +25,13 @@ const route:Routes = [
     AppComponent,
     TemplatedrivenformComponent,
     ReactiveformComponent,
-    SamplecomponentComponent
+    SamplecomponentComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    CustomersModule,
     RouterModule.forRoot(route)
   ],
   providers: [],
