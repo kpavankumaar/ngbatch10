@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../core/service/data.service';
 
 @Component({
   selector: 'app-customers',
@@ -8,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 export class CustomersComponent implements OnInit {
   cardViewStatus = true;
   gridViewStatus = false;
-  constructor() { }
+  constructor(private dataService:DataService) { }
 
-  ngOnInit() {
+  ngOnInit() {  
+    this.dataService.getCustomersData().subscribe((res)=>{
+      console.log(res);
+    })
   }
   laodPage(str){
     if(str === "card"){
