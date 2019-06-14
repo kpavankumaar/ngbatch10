@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { LoginModule } from './login/login.module';
 import { CoreModule } from './core/core.module';
 import { HttpClientModule } from '@angular/common/http';
+import { DataService } from './core/service/data.service';
 
 
 @NgModule({
