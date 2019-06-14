@@ -9,11 +9,13 @@ import { DataService } from '../core/service/data.service';
 export class CustomersComponent implements OnInit {
   cardViewStatus = true;
   gridViewStatus = false;
+  customers;
   constructor(private dataService:DataService) { }
 
   ngOnInit() {  
     this.dataService.getCustomersData().subscribe((res)=>{
       console.log(res);
+      this.customers = res;
     })
   }
   laodPage(str){

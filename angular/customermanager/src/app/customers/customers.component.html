@@ -16,7 +16,8 @@
   </nav>
   <!-- content -->
   <div *ngIf = "cardViewStatus">
-      <app-customers-card></app-customers-card>
+    <span>customers card view</span>
+    <app-customers-card [customersData]= "customers"></app-customers-card>
   </div>
   <div *ngIf = "gridViewStatus">
       <app-customers-grid></app-customers-grid>
