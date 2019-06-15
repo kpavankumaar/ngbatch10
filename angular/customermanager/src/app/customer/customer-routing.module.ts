@@ -4,6 +4,7 @@ import { CustomerComponent } from './customer.component';
 import { CustomerDetailsComponent } from './customer-details.component';
 import { CustomerOrdersComponent } from './customer-orders.component';
 import { EditCustomerComponent } from './edit-customer.component';
+import { CanActivateGaurd } from './canactivate.gaurd';
 
 const routes: Routes = [
   { path:"",
@@ -11,7 +12,10 @@ const routes: Routes = [
     children:[
       {path:"details",component:CustomerDetailsComponent},
       {path:"orders",component:CustomerOrdersComponent},
-      {path:"edit",component:EditCustomerComponent},
+      { path:"edit",
+        component:EditCustomerComponent,
+        canActivate:[CanActivateGaurd]
+      },
     ]
   }
 ];

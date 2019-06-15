@@ -16,10 +16,10 @@ import { DataService } from './core/service/data.service';
   ],
   imports: [
     BrowserModule,
+    LoginModule,
     AppRoutingModule,
     CoreModule,
-    LoginModule,
-    HttpClientModule
+     HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

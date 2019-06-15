@@ -12,4 +12,9 @@ export class DataService{
             map((res) => res)
         )
     }
+    getCustomerDataById(id:number){
+        return this.http.get(this.url+"/"+id).pipe(
+            map((res) => res)
+        )
+    }
 }
