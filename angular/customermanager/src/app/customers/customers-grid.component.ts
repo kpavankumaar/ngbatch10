@@ -11,5 +11,8 @@ export class CustomersGridComponent implements OnInit {
 
   ngOnInit() {
   }
+  sortedMethod(e){
+    console.log(e);
+  }
 
 }

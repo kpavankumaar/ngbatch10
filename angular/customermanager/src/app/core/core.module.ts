@@ -9,7 +9,7 @@ import { AuthService } from './service/auth.service';
   imports: [
     CommonModule,
     RouterModule,
-    
+    HttpClientModule
   ],
   declarations: [NavbarComponent],
   exports:[NavbarComponent],

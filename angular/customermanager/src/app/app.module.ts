@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { LoginModule } from './login/login.module';
 import { CoreModule } from './core/core.module';
 import { HttpClientModule } from '@angular/common/http';
-import { DataService } from './core/service/data.service';
+
 
 
 @NgModule({
@@ -19,9 +19,13 @@ import { DataService } from './core/service/data.service';
     LoginModule,
     AppRoutingModule,
     CoreModule,
-     HttpClientModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor(){
+    console.log("data");
+  }
+}

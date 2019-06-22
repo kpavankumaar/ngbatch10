@@ -3,11 +3,13 @@ authservice
     redirectUrl
     loginMethod
     logoutMethod
-editCustomer -> routing --> editCustomer
+customer, customerscard, customergrid -> routing --> editCustomer
             canActivate -- redirectUrl
         yes             No
 
         editCustomer   login  -- isAuthenticated,redirectUrl
+                        yes                 no --> login page
+                       editCustomer 
 
 navbarComponent -> login/logOut  -- isAuthenticated = true - show - logout
                                 -- isAuthenticated = false - show - logIn
@@ -15,7 +17,7 @@ navbarComponent -> login/logOut  -- isAuthenticated = true - show - logout
 
 
 LoginComponent -- isAuthenticated
-            --  loginMethod
+            --  loginMethod --auth.service.ts
                 yes                         no
             redirect to customers page      loginPage
             isAuthenticated = true          isAuthenticated = false
